@@ -1,17 +1,33 @@
 aid: spr-therapeutics
 name: SPR Therapeutics
-description: 'SPR Therapeutics is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'SPR Therapeutics, Inc. is a Cleveland, Ohio medical device company that develops and commercializes
+  the SPRINT Peripheral Nerve Stimulation (PNS) System, a non-opioid, minimally invasive percutaneous
+  therapy for chronic and acute pain. SPRINT is the only percutaneous PNS device FDA-cleared for both
+  chronic and acute pain that does not require permanent implantation: leads are placed in an outpatient
+  procedure without surgery, incisions or anesthesia and deliver up to 60 days of therapy. The company
+  was acquired by Medtronic plc on 2026-07-16 for $650 million and now operates within the Medtronic Neuromodulation
+  Operating Unit. SPR is a device manufacturer rather than a software vendor: it publishes no public API,
+  developer portal, SDK or machine-readable contract. Its only software surfaces are the consumer SPRINT
+  PNS Patient App and the credentialed SPRcare provider reimbursement portal, neither of which exposes
+  a public integration.'
 url: https://raw.githubusercontent.com/api-evangelist/spr-therapeutics/refs/heads/main/apis.yml
+image: https://www.sprpainrelief.com/sites/default/files/styles/meta/public/2024-11/Banner.jpg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-parent: medtronic
+x-relationship: acquisition
+x-acquired: '2026-07-16'
 specificationVersion: '0.20'
 created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
+- Medical Devices
+- Health Care
+- Neuromodulation
+- Pain Management
+- Neurotechnology
+- Medical Technology
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,41 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/spr-therapeutics-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/spr-therapeutics_stock/
+  url: https://www.sprpainrelief.com/
+- type: Support
+  url: https://www.sprpainrelief.com/contact-us
+- type: Blog
+  url: https://www.sprpainrelief.com/news-press-releases
+- type: PrivacyPolicy
+  url: https://www.sprpainrelief.com/privacy
+- type: TermsOfService
+  url: https://www.sprpainrelief.com/terms-use
+- type: LLMsTxt
+  url: llms/spr-therapeutics-llms.txt
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: SPR Therapeutics manufactures the SPRINT percutaneous nerve-stimulation device; its entire web
+    estate is a Drupal marketing and clinical-evidence site, and the only software it ships is a consumer
+    patient app and the credentialed SPRcare reimbursement portal, so there is no API, developer portal
+    or machine-readable contract to profile.
+  evidence:
+  - url: https://www.sprpainrelief.com/openapi.json
+    status: 404
+  - url: https://www.sprpainrelief.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.sprpainrelief.com/llms.txt
+    status: 404
+  - url: https://www.sprpainrelief.com/graphql
+    status: 404
+  - url: https://api.sprtherapeutics.com/
+    status: 0
+  checked: '2026-08-29'

@@ -1,0 +1,48 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  Direct unauthenticated GETs of /.well-known/* on every host SPR Therapeutics
+  controls, 2026-08-29. Recorded as an absence: no pointer is emitted because no
+  path returned a document.
+note: >-
+  Every probed path returned a genuine HTTP 404 from the provider's Drupal site
+  (text/html error page, not a 200 SPA shell), so these are real absences rather
+  than a catch-all masking a hit. www.sprtherapeutics.com is not a separate
+  surface: it 301s to the canonical www.sprpainrelief.com. No WellKnown or
+  SecurityTxt pointer is wired into apis.yml, because a recorded absence must not
+  be scored as a presence.
+hosts:
+- host: www.sprpainrelief.com
+  canonical: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.sprtherapeutics.com
+  canonical: false
+  redirects_to: https://www.sprpainrelief.com/
+  documents:
+  - path: /
+    status: 301
+    file: null
