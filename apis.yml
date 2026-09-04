@@ -11,6 +11,18 @@ description: 'SPR Therapeutics, Inc. is a Cleveland, Ohio medical device company
   PNS Patient App and the credentialed SPRcare provider reimbursement portal, neither of which exposes
   a public integration.'
 url: https://raw.githubusercontent.com/api-evangelist/spr-therapeutics/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://www.sprpainrelief.com/sites/default/files/styles/meta/public/2024-11/Banner.jpg
 x-type: company
 x-source: harvest:secondary-market
